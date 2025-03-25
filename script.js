@@ -20,3 +20,19 @@ document.addEventListener("DOMContentLoaded", function() {
 
     setInterval(showNextImage,3000); // Muda a imagem a cada 3 segundos
 });
+// Adicionando efeito ao passar o mouse no número do WhatsApp
+document.addEventListener("DOMContentLoaded", function () {
+    const whatsappSection = document.querySelector("a[href*='wa.me']");
+    
+    if (whatsappSection) {
+        whatsappSection.addEventListener("mouseover", function () {
+            whatsappSection.style.color = "#25D366"; // Cor verde típica do WhatsApp
+            whatsappSection.style.textDecoration = "underline";
+        });
+
+        whatsappSection.addEventListener("mouseout", function () {
+            whatsappSection.style.color = ""; // Restaura a cor original
+            whatsappSection.style.textDecoration = "none";
+        });
+    }
+});
