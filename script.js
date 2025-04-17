@@ -36,3 +36,29 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 });
+let carrinho = [];
+let total = 0;
+
+function adicionarAoCarrinho(nome, preco) {
+    carrinho.push({ nome, preco });
+    total += preco;
+    atualizarCarrinho();
+}
+
+function atualizarCarrinho() {
+    let listaCarrinho = document.getElementById('carrinho');
+    let totalElemento = document.getElementById('total');
+    
+    // Limpar carrinho antes de atualizar
+    listaCarrinho.innerHTML = '';
+
+    // Adicionar itens ao carrinho
+    carrinho.forEach(item => {
+        let li = document.createElement('li');
+        li.textContent = `${item.nome} - R$ ${item.preco}`;
+        listaCarrinho.appendChild(li);
+    });
+
+    // Atualizar total
+    totalElemento.textContent = total;
+}
