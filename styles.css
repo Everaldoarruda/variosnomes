@@ -8,39 +8,59 @@ body {
     background-color: #eee;
 }
 
-header {
-    height: 150px;
+/* Background com gradiente */
+.background {
+    background: linear-gradient(135deg, #f3e7e9, #e3eeff);
+    font-family: 'Arial', sans-serif;
+    color: #333;
+    min-height: 100vh;
     display: flex;
-    justify-content: space-between; /* Adicionado para espaçar logo e nav */
-    align-items: center;
-    padding: 0 50px; /* Adicionado padding para espaçamento */
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+/* Estilo do header */
+header {
+    background-color: rgba(255, 255, 255, 0.8);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 header img {
-    height: 150px; /* Ajuste a altura conforme necessário */
+    height: 100px;
+
+
 }
 
+/* Ajuste para a barra de navegação no lado direito */
 .menu {
     display: flex;
+    justify-content: flex-end; /* Move a barra para o lado direito */
     align-items: center;
+    gap: 20px; /* Espaçamento entre os itens */
 }
 
 .menu ul {
     display: flex;
     list-style: none;
     padding: 0;
-    margin: 20px 0; /* Adicionado para espaçamento */
+    margin: 0;
 }
 
 .menu li {
-    margin-left: 20px;
+    margin: 0 10px;
     padding: 30px;
 }
 
 .menu a {
     text-decoration: none;
-    color: #565151;
-    font-size: 20px;
+    color: #333;
+    font-weight: bold;
+    font-size: 18px;
+    transition: color 0.3s ease;
+}
+
+.menu a:hover {
+    color: #007BFF;
 }
 
 .galeria-container {
@@ -88,13 +108,51 @@ header img {
     opacity: 1;
 }
 
+/* Estilo do main */
+main {
+    text-align: center;
+    padding: 40px 20px;
+}
+
+h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: #444;
+}
+
+.contact-info p {
+    font-size: 1.2rem;
+    margin: 10px 0;
+}
+
+.whatsapp-section h2 {
+    font-size: 1.8rem;
+    margin: 20px 0;
+}
+
+button {
+    background-color: #25D366;
+    color: #fff;
+    border: none;
+    padding: 15px 30px;
+    border-radius: 25px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+button:hover {
+    background-color: #1DA851;
+    transform: scale(1.1);
+}
+
 footer {
-    height: 100px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: #000;
-    font-style: italic;
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 20px;
+    text-align: center;
+    font-size: 0.9rem;
+    color: #555;
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
 }
 
 .hidden {
@@ -134,29 +192,6 @@ footer {
         max-width: none;
     }
 }
-/* Estilo do Header - mantido na posição atual */
-header {
-    background-color:#eee;
-    padding: 10px 0;
-    color:#eee;
-    text-align: center;
-    position: static; /* Mantém o estilo padrão */
-}
-
-nav ul {
-    list-style: none;
-    padding: 0;
-}
-
-nav ul li {
-    display: inline;
-    margin-right: 15px;
-}
-
-nav ul li a {
-    text-decoration: none;
-    color: #eee;
-}
 
 /* Centralizar apenas o contato do artista */
 main {
@@ -171,24 +206,6 @@ h1, p, section {
     text-align: center;
 }
 
-/* Hover para botão do WhatsApp */
-button {
-    background-color: #25D366;
-    color: #eee;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 5px;
-    font-size: 16px;
-    cursor: pointer;
-    transition: transform 0.3s ease, background-color 0.3s ease;
-}
-
-button:hover {
-    background-color: #1DA851;
-    transform: scale(1.05); /* Efeito de leve aumento ao passar o mouse */
-}
-
-
 .produtos {
     display: flex;
     justify-content: center;
@@ -196,7 +213,60 @@ button:hover {
 }
 
 .produto {
-    border: 1px solid #ccc;
+    border: 1px solid #eee;
     padding: 10px;
     width: 150px;
+}
+
+/* Estilo para a seção de vídeos */
+.videos-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 40px 20px;
+}
+
+.video {
+    width: 300px;
+    text-align: center;
+}
+
+.video iframe {
+    width: 100%;
+    height: 200px;
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.video span {
+    display: block;
+    margin-top: 10px;
+    font-size: 1rem;
+    color: #333;
+}
+
+/* Estilo para a página em construção */
+.construction-page {
+    text-align: center;
+    padding: 40px 20px;
+}
+
+.construction-page h1 {
+    font-size: 2.5rem;
+    color: #444;
+    margin-bottom: 20px;
+}
+
+.construction-page p {
+    font-size: 1.2rem;
+    color: #666;
+    margin-bottom: 30px;
+}
+
+.construction-image {
+    width: 300px;
+    height: auto;
+    margin-top: 20px;
 }
