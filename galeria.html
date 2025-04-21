@@ -13,42 +13,60 @@
         <img src="img/logo-registrado-black (1).png" alt="logomarca registrada de vários nomes">
         <nav class="menu">
             <ul>
-                <li><a href="../index.html">Ar Livre</a></li>
-                <li><a href="../galeria.html">Interior</a></li>
+                <li><a href="../index.html">Murais</a></li>
+                <li><a href="../galeria.html">Canvas</a></li>
                 <li><a href="Videos.html">Videos</a></li>
                 <li><a href="sobre.html">Sobre</a></li>
-                <li><a href="news.html">Novidades</a></li>
+                <li><a href="loja.html">loja</a></li>
                 <li><a href="../contato.html">Contato</a></li>
             </ul>
         </nav>
     </header>
     <main>
-        <h1>Galeria</h1>
         <div class="galeria-container">
-            <a href="img/imagem1.jpg" class="itens-galeria">
-                <img src="img/imagem1.jpg" alt="Descrição da imagem 1">
+            <div class="itens-galeria" onclick="abrirImagem('img/Rainha.png', 'Descrição da imagem 1')">
+                <img src="img/Rainha.png" alt="Descrição da imagem 1">
                 <span>Descrição da imagem 1</span>
-            </a>
-            <a href="img/imagem2.jpg" class="itens-galeria">
-                <img src="img/imagem2.jpg" alt="Descrição da imagem 2">
-                <span>Descrição da imagem 2</span>
-            </a>
-            <a href="img/imagem3.jpg" class="itens-galeria">
-                <img src="img/imagem3.jpg" alt="Descrição da imagem 3">
+            </div>
+
+            <!-- <div class="itens-galeria" onclick="abrirImagem('img/IMG_9555.jpg', 'Descrição da imagem 3')">
+                <img src="img/IMG_9555.jpg" alt="Descrição da imagem 3">
                 <span>Descrição da imagem 3</span>
-            </a>
-            <a href="img/imagem4.jpg" class="itens-galeria">
-                <img src="img/imagem4.jpg" alt="Descrição da imagem 4">
+            </div> -->
+            <div class="itens-galeria" onclick="abrirImagem('img/IMG_0263.jpg', 'Descrição da imagem 4')">
+                <img src="img/IMG_0263.jpg" alt="Descrição da imagem 4">
                 <span>Descrição da imagem 4</span>
-            </a>
-            <a href="img/imagem5.jpg" class="itens-galeria">
-                <img src="img/imagem5.jpg" alt="Descrição da imagem 5">
+            </div>
+            <div class="itens-galeria" onclick="abrirImagem('img/nova 2025.1.png', 'Descrição da imagem 5')">
+                <img src="img/nova 2025.1.png" alt="Descrição da imagem 5">
                 <span>Descrição da imagem 5</span>
-            </a>
+            </div>
+            <div class="itens-galeria" onclick="abrirImagem('img/nova 2025 2.png', 'Descrição da imagem 6')">
+                <img src="img/nova 2025 2.png" alt="Descrição da imagem 6">
+                <span>Descrição da imagem 6</span>
+            </div>
+        </div>
+
+        <!-- Modal para exibir a imagem maior -->
+        <div id="imagem-modal" class="imagem-modal hidden">
+            <button class="voltar" onclick="fecharImagem()">← Voltar</button>
+            <img id="imagem-grande" src="" alt="">
+            <p id="descricao-imagem"></p>
         </div>
     </main>
     <footer>
         <span>&copy; 2025 | Vários Nomes</span>
     </footer>
+    <script>
+        function abrirImagem(src, descricao) {
+            document.getElementById('imagem-modal').classList.remove('hidden');
+            document.getElementById('imagem-grande').src = src;
+            document.getElementById('descricao-imagem').textContent = descricao;
+        }
+
+        function fecharImagem() {
+            document.getElementById('imagem-modal').classList.add('hidden');
+        }
+    </script>
 </body>
 </html>
