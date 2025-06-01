@@ -47,10 +47,12 @@
             </div>
         </div>
 
-        <!-- Modal para exibir a imagem maior -->
+        <!-- Modal para exibir a imagem maior com lupa -->
         <div id="imagem-modal" class="imagem-modal hidden">
             <button class="voltar" onclick="fecharImagem()">← Voltar</button>
-            <img id="imagem-grande" src="" alt="">
+            <div class="zoom-container">
+                <img id="imagem-grande" src="" alt="">
+            </div>
             <p id="descricao-imagem"></p>
         </div>
     </main>
@@ -67,6 +69,23 @@
         function fecharImagem() {
             document.getElementById('imagem-modal').classList.add('hidden');
         }
+
+        // Função para aplicar zoom na imagem
+        const imagemGrande = document.getElementById('imagem-grande');
+        const zoomContainer = document.querySelector('.zoom-container');
+
+        zoomContainer?.addEventListener('mousemove', (e) => {
+            const rect = zoomContainer.getBoundingClientRect();
+            const x = ((e.clientX - rect.left) / rect.width) * 100;
+            const y = ((e.clientY - rect.top) / rect.height) * 100;
+            imagemGrande.style.transformOrigin = `${x}% ${y}%`;
+            imagemGrande.style.transform = 'scale(2)';
+        });
+
+        zoomContainer?.addEventListener('mouseleave', () => {
+            imagemGrande.style.transform = 'scale(1)';
+            imagemGrande.style.transformOrigin = 'center center';
+        });
     </script>
 </body>
 </html>

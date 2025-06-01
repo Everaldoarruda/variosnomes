@@ -11,7 +11,7 @@ body {
 /* Background com gradiente */
 .background {
     background: linear-gradient(135deg, #f3e7e9, #e3eeff);
-    font-family: 'Arial', sans-serif;
+    font-family: 'gotham', sans-serif;
     color: #333;
     min-height: 100vh;
     display: flex;
@@ -344,7 +344,7 @@ main {
     max-width: 90%;
     max-height: 80%;
     border-radius: 10px;
-    margin-bottom: 20px;
+    transition: transform 0.3s ease;
 }
 
 .imagem-modal p {
@@ -373,4 +373,17 @@ main {
 
 .hidden {
     display: none;
+}
+
+/* Estilo para o zoom */
+.zoom-container {
+    position: relative;
+    overflow: hidden;
+    width: 900%;
+    max-width: 900px;
+    max-height: 80%;
+}
+
+.zoom-container img {
+    transition: transform 0.3s ease, transform-origin 0.3s ease;
 }
